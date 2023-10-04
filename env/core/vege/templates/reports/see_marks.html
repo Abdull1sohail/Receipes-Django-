@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block start %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container mt-5">
+
+    <h2>Rank: </h2>
+    <h2>Total Marks: {{total_marks.total_marks}} </h2>
+    <table class="table table-striped">
+    <tbody>
+    {% for marks in queryset %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>
+        <b>{{marks.subject.subject_name}}</b>
+        </td>
+        <td>{{marks.marks}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block start %}
+  <li><a href="/About/">About</a></li>
+  <li><a href="/Surahs/">Surahs</a></li>
+  <li><a href="/Contacts/">Contacts</a></li>
+  <li><a href="/receipes/">Receipes</a></li>
+
+  <br>
+  <h1>Surah Table</h1>
+  <table class="table table-hover">
+    <tr>
+      <th>SURAH NO</th>
+      <th>SURAH NAME</th>
+    </tr>
+    {% for Surah in Surahs %}
+    <tr>
+      <td>{{ Surah.surah_no}}</td>
+      <td>{{ Surah.name}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  
+{% endblock %}
